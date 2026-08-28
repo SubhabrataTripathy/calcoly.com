@@ -91,7 +91,7 @@ pillars.forEach(p => urls.push(SITE.url + '/' + p.id + '/'));
 tools.forEach(t => urls.push(SITE.url + toolUrl(t)));
 
 const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-  urls.map(u => '  <url>\n    <loc>' + u + '</loc>\n    <lastmod>' + today + '</lastmod>\n  </url>').join('\n') +
+  urls.map(u => '  <url>\n    <loc>' + u + '</loc>\n  </url>').join('\n') +
   '\n</urlset>\n';
 
 write('sitemap.xml', sitemap);

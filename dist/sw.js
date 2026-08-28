@@ -1,6 +1,6 @@
 /* Calcoly Service Worker — Offline Utility Support */
 
-const CACHE_NAME = 'calcoly-vmtct8mnb';
+const CACHE_NAME = 'calcoly-vmtd81lcf';
 const ASSETS_TO_CACHE = [
   '/',
   '/assets/styles.css',

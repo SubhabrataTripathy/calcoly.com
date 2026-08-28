@@ -123,15 +123,9 @@ export function homepage() {
       '<div style="margin-top:14px"><a href="/' + p.id + '/" class="caption" style="color:var(--primary)">Browse all ' + pillarTools.length + ' tools &rarr;</a></div></div>';
   }).join('');
 
-  var toolIndexJSON = JSON.stringify(tools.map(t => ({
-    n: t.name,
-    h: t.h1,
-    u: toolUrl(t),
-    k: (t.kw || []).join(' ')
-  })));
-
   var body = navHTML('/') +
-  '<section class="hero container"><h1 class="display-hero">Calculate. Convert. Done.</h1>' +
+  '<section class="hero container"><h1 class="display-hero">Free Online Calculators &amp; Converters</h1>' +
+  '<p class="serif" style="font-size:22px;color:var(--primary);margin:10px auto 0;font-weight:600;letter-spacing:-0.01em">Calculate. Convert. Done.</p>' +
   '<p class="body-md sub">Fast, precise calculators and converters for everyday math. Clean, instant, no sign-up.</p>' +
   '<div class="search-wrap" id="search"><div class="search-field"><span class="lens">' + searchIconSVG(18) + '</span>' +
   '<input type="text" id="q" placeholder="Search a tool \u2014 e.g. &quot;kg to lbs&quot;, &quot;cups to grams&quot;" autocomplete="off"><kbd>Enter</kbd></div>' +
@@ -143,7 +137,7 @@ export function homepage() {
   '<div class="cheat-sheets-banner">' +
   '<div class="cs-content">' +
   '<span class="badge-pill">Free printable references</span>' +
-  '<h2 class="title-lg" style="margin:8px 0 4px">Printable Cheat Sheets & Charts</h2>' +
+  '<h2 class="title-lg" style="margin:8px 0 4px">Printable Cheat Sheets &amp; Charts</h2>' +
   '<p class="body-sm">Free printable charts for food bloggers, teachers, students, and DIY enthusiasts.</p>' +
   '</div>' +
   '<div class="cs-links">' +
@@ -151,10 +145,51 @@ export function homepage() {
   '<a href="/metric-to-imperial-cheat-sheet/" class="btn btn-secondary">Metric to Imperial</a>' +
   '<a href="/percentage-formula-cheat-sheet/" class="btn btn-secondary">Percentage Formulas</a>' +
   '</div></div>' +
-  '<h2 class="display-sm" style="margin:40px 0 24px">Explore Calcoly</h2><div class="tiles">' + tiles + '</div></section>';
+  '<h2 class="display-sm" style="margin:40px 0 24px">Explore Calcoly</h2><div class="tiles">' + tiles + '</div></section>' +
+
+  '<section class="section container" style="border-top:1px solid var(--hairline);margin-top:40px;padding-top:48px">' +
+  '<div style="max-width:820px;margin:0 auto;line-height:1.75">' +
+  '<h2 class="display-sm" style="margin-bottom:16px">Free Online Calculators &amp; Converters for Fast, Accurate Math</h2>' +
+  '<p class="body-md" style="margin-bottom:20px">Calcoly provides clean, instantaneous, and privacy-first online calculation and conversion tools. Every calculation runs locally in your web browser with zero lag, zero tracking cookies, and no account registration required. Whether you are baking bread, checking construction dimensions, splitting a bill, or converting international units, Calcoly delivers verified results in milliseconds.</p>' +
+
+  '<h3 class="title-lg" style="margin:28px 0 10px">Unit Converters</h3>' +
+  '<p class="body-md" style="margin-bottom:20px">Seamlessly convert between Metric, US Customary, and British Imperial measurement systems. Popular converters include our <a href="/converter/cm-to-inches/" class="in-text-link">CM to Inches Converter</a> and <a href="/converter/inches-to-cm/" class="in-text-link">Inches to CM Converter</a> for height and screen sizing, <a href="/converter/kg-to-lbs/" class="in-text-link">KG to LBS Converter</a> and <a href="/converter/lbs-to-kg/" class="in-text-link">LBS to KG Converter</a> for body weight and gym metrics, <a href="/converter/mm-to-inches/" class="in-text-link">MM to Inches</a> for precision machining, and <a href="/converter/celsius-to-fahrenheit/" class="in-text-link">Celsius to Fahrenheit</a> and <a href="/converter/fahrenheit-to-celsius/" class="in-text-link">Fahrenheit to Celsius</a> for weather and oven temperatures.</p>' +
+
+  '<h3 class="title-lg" style="margin:28px 0 10px">Calculators for Everyday Math</h3>' +
+  '<p class="body-md" style="margin-bottom:20px">Handle essential everyday arithmetic and health equations without complex software. Solve percentage problems with our <a href="/calculator/percentage/" class="in-text-link">Percentage Calculator</a>, calculate growth and salary adjustments using the <a href="/calculator/percentage-increase/" class="in-text-link">Percentage Increase Calculator</a>, or evaluate fitness benchmarks with the <a href="/calculator/bmi/" class="in-text-link">BMI Calculator</a> and <a href="/calculator/tdee/" class="in-text-link">TDEE Calculator</a>.</p>' +
+
+  '<h3 class="title-lg" style="margin:28px 0 10px">Baking &amp; Cooking Converters</h3>' +
+  '<p class="body-md" style="margin-bottom:20px">Culinary measurements require weight-to-volume precision because ingredient density varies dramatically. Use our <a href="/baking/cups-to-grams/" class="in-text-link">Cups to Grams Converter</a> and <a href="/baking/grams-to-cups/" class="in-text-link">Grams to Cups Converter</a> to accurately weigh 16 essential baking ingredients. Bread makers can fine-tune flour and water ratios with the <a href="/baking/sourdough-hydration/" class="in-text-link">Sourdough Hydration Calculator</a> or multiply batch sizes using the <a href="/baking/recipe-scaler/" class="in-text-link">Recipe Scaler</a>.</p>' +
+
+  '<h3 class="title-lg" style="margin:28px 0 10px">Money &amp; Finance Tools</h3>' +
+  '<p class="body-md" style="margin-bottom:20px">Make fast personal finance decisions with transparent, no-fluff calculation tools. Calculate gratuity and split bills with the <a href="/money/tip/" class="in-text-link">Tip Calculator</a>, compute retail discounts with the <a href="/money/discount/" class="in-text-link">Discount Calculator</a>, calculate net and gross tax with the <a href="/money/vat-calculator/" class="in-text-link">VAT Calculator</a>, or project savings growth with the <a href="/money/step-up-compound-interest/" class="in-text-link">Step-Up Compound Interest Calculator</a>.</p>' +
+
+  '<h3 class="title-lg" style="margin:28px 0 10px">Date &amp; Time Tools</h3>' +
+  '<p class="body-md" style="margin-bottom:20px">Track calendar durations and project timelines easily. Calculate calendar intervals with the <a href="/date/days-between-dates/" class="in-text-link">Days Between Dates Calculator</a>, find exact birth milestone durations with the <a href="/date/age/" class="in-text-link">Age Calculator</a>, or eliminate international confusion between US (MM/DD/YYYY) and UK (DD/MM/YYYY) formats with the <a href="/date/date-format-resolver/" class="in-text-link">Date Format Resolver</a>.</p>' +
+
+  '<h3 class="title-lg" style="margin:28px 0 10px">Everyday Utility Tools</h3>' +
+  '<p class="body-md" style="margin-bottom:20px">Practical utility tools designed for makers, writers, and hobbyists. Count words, characters, and reading time with the <a href="/everyday/word-counter/" class="in-text-link">Word Counter</a>, match yarn plies with the <a href="/everyday/yarn-weight-gauge/" class="in-text-link">Yarn Weight &amp; Gauge Converter</a>, calculate print resolutions with the <a href="/everyday/paper-size-pixels-dpi/" class="in-text-link">Paper Size to Pixels Converter</a>, or check tire pressure units using the <a href="/converter/psi-to-bar-kpa/" class="in-text-link">PSI to BAR Pressure Converter</a>.</p>' +
+
+  '<h3 class="title-lg" style="margin:28px 0 10px">Why Use Calcoly?</h3>' +
+  '<ul style="margin:12px 0 20px 24px;list-style:disc">' +
+  '<li style="margin-bottom:8px"><strong>100% Client-Side Speed &amp; Privacy:</strong> All calculations execute in your browser via lightweight JavaScript. Your private numbers, weights, and measurements are never stored or transmitted to remote servers.</li>' +
+  '<li style="margin-bottom:8px"><strong>Zero Distractions:</strong> No popups, forced logins, subscription paywalls, or cluttered banner ads blocking your screen.</li>' +
+  '<li style="margin-bottom:8px"><strong>Verified Mathematical Accuracy:</strong> Built on international scientific conversion constants (NIST, ISO, and standard culinary densities).</li>' +
+  '</ul>' +
+
+  '<h3 class="title-lg" style="margin:28px 0 10px">Frequently Asked Questions</h3>' +
+  '<div class="faq" style="margin-top:16px">' +
+  '<details><summary>Are all calculators and converters on Calcoly completely free?</summary><div class="a">Yes. Every single tool, conversion chart, and printable cheat sheet on Calcoly is 100% free to use with no account registration or payment required.</div></details>' +
+  '<details><summary>Does Calcoly store the numbers or values I enter?</summary><div class="a">No. All calculations run strictly client-side inside your browser. Nothing you type is saved, tracked, or sent to our servers.</div></details>' +
+  '<details><summary>Are Calcoly tools mobile-friendly?</summary><div class="a">Yes. Every page is fully responsive, optimized with touch-friendly controls, fast loading speeds, and automatic iOS zoom prevention.</div></details>' +
+  '<details><summary>How accurate are the conversion formulas?</summary><div class="a">All converters use official international standard conversion constants (such as 1 inch = 2.54 cm and 1 lb = 0.45359237 kg) with full floating-point precision.</div></details>' +
+  '</div>' +
+  '</div>' +
+  '</section>';
 
   return wrap(body, {
-    title: SITE.name + ' \u2014 ' + SITE.tagline,
+    title: 'Free Online Calculators & Converters | Calcoly',
+    desc: 'Free online calculators and converters for everyday math, unit conversions, baking, money, dates and more. Fast, accurate and easy to use.',
     canonical: SITE.url + '/'
   });
 }
@@ -245,7 +280,7 @@ export function toolPage(t) {
   '<p class="body-md lead">' + esc(t.lead) + '</p></div>' +
 
   '<div class="container">' +
-  // Tool Interactive Interface Widget
+  // Tool Interactive Interface Widget (Main purpose of page - kept above explanatory content)
   widgetHTML(t) +
 
   // Inverted Tool Banner (if available)
@@ -255,14 +290,28 @@ export function toolPage(t) {
     '<a href="' + toolUrl(inverted) + '" class="btn btn-secondary btn-sm">Convert ' + esc(inverted.h1) + ' &rarr;</a>' +
     '</div>' : '') +
 
-  // Formula Section (Code Window Card) & AI Citation Summary
-  '<div class="section-divider"></div>' +
+  // How to Use Section (if present)
+  (t.howToUse ?
+    '<div class="how-to-use-wrap" style="margin-top:32px">' +
+    '<h2 class="title-lg" style="margin-bottom:12px">How to Use the ' + esc(t.h1) + '</h2>' +
+    '<div class="body-md" style="line-height:1.7">' + t.howToUse + '</div>' +
+    '</div>' : '') +
+
+  // Formula Section (Code Window Card) & Mathematical Definition
+  '<div class="section-divider" style="margin-top:32px"></div>' +
   '<div class="formula-card-wrap">' +
   '<div class="code-window-card">' +
-  '<div class="code-window-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="code-title">Formula &amp; AI Citation Summary</span></div>' +
+  '<div class="code-window-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="code-title">Formula &amp; Mathematical Definition</span></div>' +
   '<div class="code-window-body"><code>' + esc(t.formula) + '</code>' +
-  '<div class="quick-summary-note"><strong>Quick Summary:</strong> ' + esc(t.lead) + ' Formula: <code>' + esc(t.formula) + '</code></div>' +
+  '<div class="quick-summary-note"><strong>Calculation Formula:</strong> <code>' + esc(t.formula) + '</code></div>' +
   '</div></div></div>' +
+
+  // Formula Explanation (if present)
+  (t.explanation ?
+    '<div class="explanation-wrap" style="margin-top:24px">' +
+    '<h3 class="title-md" style="margin-bottom:10px">Understanding the Formula</h3>' +
+    '<p class="body-md" style="line-height:1.7">' + esc(t.explanation) + '</p>' +
+    '</div>' : '') +
 
   // Practical Examples
   (t.examples && t.examples.length ?
@@ -1163,8 +1212,21 @@ function Calcoly_fmt(n) {
 }
 
 function tableHTML(t) {
+  if (t.customTable) {
+    var ct = t.customTable;
+    var ths = ct.headers.map(h => '<th>' + esc(h) + '</th>').join('');
+    var rows = ct.rows.map(r =>
+      '<tr>' + r.map((cell, idx) => '<td' + (idx > 0 ? ' class="num tabular-nums"' : '') + '>' + esc(cell) + '</td>').join('') + '</tr>'
+    ).join('');
+
+    return '<div class="table-card-wrap" style="margin-top:40px">' +
+      '<h2 class="title-lg" style="margin-bottom:14px">' + esc(ct.title) + '</h2>' +
+      '<div class="table-wrap"><table class="data"><thead><tr>' + ths + '</tr></thead><tbody>' + rows + '</tbody></table></div>' +
+      '</div>';
+  }
+
   var w = t.widget;
-  if (w.type === 'convert' && w.factor) {
+  if (w && w.type === 'convert' && w.factor) {
     var f = w.factor; var a = w.from.unit; var b = w.to.unit;
     var vals = [0.5, 1, 2, 5, 10, 20, 50, 100, 150, 200];
     var rows = vals.map(v =>
@@ -1180,7 +1242,11 @@ function tableHTML(t) {
 }
 
 function relatedMatrixHTML(t, siblings, popular) {
-  var sibPills = siblings.slice(0, 8).map(r =>
+  var relList = (t.related && t.related.length)
+    ? t.related.map(s => tools.find(x => x.slug === s)).filter(Boolean)
+    : siblings;
+
+  var sibPills = relList.slice(0, 8).map(r =>
     '<a href="' + toolUrl(r) + '" class="pill-tag">' + esc(r.h1) + '</a>'
   ).join('');
 
@@ -1191,7 +1257,7 @@ function relatedMatrixHTML(t, siblings, popular) {
   return '<div class="related container" style="margin-top:48px;border-top:1px solid var(--hairline);padding-top:40px">' +
     (sibPills ?
       '<div style="margin-bottom:28px">' +
-      '<h3 class="title-md" style="margin-bottom:12px">More ' + esc(t.ecosystem) + ' Converters</h3>' +
+      '<h3 class="title-md" style="margin-bottom:12px">Related ' + esc(t.ecosystem) + ' Tools</h3>' +
       '<div class="pills">' + sibPills + '</div>' +
       '</div>' : '') +
     '<div>' +
