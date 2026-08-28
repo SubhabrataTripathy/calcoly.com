@@ -1228,23 +1228,60 @@ export function contactPage() {
   '<div class="container crumbs"><a href="/">Home</a><span>&rsaquo;</span><span>Contact Us</span></div>' +
   '<div class="container tool-head"><div class="badge-pill">Get In Touch</div>' +
   '<h1 class="display-md" style="margin-top:8px">Contact &amp; Support</h1>' +
-  '<p class="body-md lead">Have a question, tool suggestion, or bug report? We would love to hear from you.</p></div>' +
+  '<p class="body-md lead">Have a question, tool suggestion, or bug report? Send us a message and we will respond to you directly.</p></div>' +
   '<div class="container" style="max-width:760px;margin-top:24px">' +
   '<div class="tool-card-ui">' +
-  '<form id="contact-form" onsubmit="event.preventDefault(); document.getElementById(&quot;contact-msg&quot;).style.display=&quot;block&quot;; this.reset();">' +
-  '<div class="field"><label>Your Name</label><input type="text" placeholder="e.g. Sarah Jenkins" required></div>' +
-  '<div class="field"><label>Your Email Address</label><input type="email" placeholder="sarah@example.com" required></div>' +
-  '<div class="field"><label>Subject</label><select style="height:48px"><option>Tool Suggestion / Feature Request</option><option>Bug Report / Calculation Issue</option><option>General Feedback</option><option>Partnership / Media Inquiries</option></select></div>' +
-  '<div class="field"><label>Message</label><textarea rows="5" placeholder="Tell us how we can help..." style="width:100%;padding:12px;border:1px solid var(--hairline);border-radius:var(--r-md);background:var(--canvas);color:var(--ink);font-family:var(--sans);font-size:16px" required></textarea></div>' +
-  '<button type="submit" class="btn btn-primary" style="width:100%;height:48px;font-size:16px">Send Message &rarr;</button>' +
+  '<form id="contact-form">' +
+  '<div class="field"><label for="c-name">Your Name</label><input type="text" id="c-name" name="name" placeholder="e.g. Sarah Jenkins" required></div>' +
+  '<div class="field"><label for="c-email">Your Email Address</label><input type="email" id="c-email" name="email" placeholder="sarah@example.com" required></div>' +
+  '<div class="field"><label for="c-subject">Subject</label><select id="c-subject" name="_subject" style="height:48px"><option value="[Calcoly Contact] Tool Suggestion / Feature Request">Tool Suggestion / Feature Request</option><option value="[Calcoly Contact] Bug Report / Calculation Issue">Bug Report / Calculation Issue</option><option value="[Calcoly Contact] General Feedback">General Feedback</option><option value="[Calcoly Contact] Partnership Inquiries">Partnership Inquiries</option></select></div>' +
+  '<div class="field"><label for="c-msg">Message</label><textarea id="c-msg" name="message" rows="5" placeholder="Tell us how we can help..." style="width:100%;padding:12px;border:1px solid var(--hairline);border-radius:var(--r-md);background:var(--canvas);color:var(--ink);font-family:var(--sans);font-size:16px" required></textarea></div>' +
+  '<input type="hidden" name="_captcha" value="false">' +
+  '<input type="hidden" name="_template" value="table">' +
+  '<button type="submit" id="contact-submit-btn" class="btn btn-primary" style="width:100%;height:48px;font-size:16px">Send Message &rarr;</button>' +
   '</form>' +
   '<div id="contact-msg" style="display:none;margin-top:16px;padding:16px;background:var(--surface-soft);border-left:4px solid var(--primary);border-radius:var(--r-sm);color:var(--ink);font-weight:500">' +
-  '✓ Thank you! Your message has been sent. We will respond to your inquiry shortly.' +
+  '✓ Thank you! Your message has been sent successfully. We will reply to your email shortly.' +
+  '</div>' +
+  '<div id="contact-err" style="display:none;margin-top:16px;padding:16px;background:#fef2f2;border-left:4px solid #ef4444;border-radius:var(--r-sm);color:#991b1b;font-weight:500">' +
+  'Could not send message automatically. Please email us directly at <a href="mailto:suvo.tripathy@gmail.com?subject=Calcoly%20Inquiry" style="text-decoration:underline;color:inherit">suvo.tripathy@gmail.com</a>.' +
   '</div>' +
   '</div>' +
+  '<script>' +
+  'document.getElementById("contact-form").addEventListener("submit", async function(e) {' +
+  '  e.preventDefault();' +
+  '  var btn = document.getElementById("contact-submit-btn");' +
+  '  var msg = document.getElementById("contact-msg");' +
+  '  var err = document.getElementById("contact-err");' +
+  '  msg.style.display = "none"; err.style.display = "none";' +
+  '  btn.disabled = true; btn.innerText = "Sending Message...";' +
+  '  var formData = new FormData(this);' +
+  '  var data = Object.fromEntries(formData.entries());' +
+  '  try {' +
+  '    var res = await fetch("https://formsubmit.co/ajax/suvo.tripathy@gmail.com", {' +
+  '      method: "POST",' +
+  '      headers: { "Content-Type": "application/json", "Accept": "application/json" },' +
+  '      body: JSON.stringify(data)' +
+  '    });' +
+  '    if (res.ok) {' +
+  '      msg.style.display = "block";' +
+  '      this.reset();' +
+  '      btn.innerText = "Message Sent ✓";' +
+  '    } else {' +
+  '      err.style.display = "block";' +
+  '      btn.disabled = false;' +
+  '      btn.innerText = "Send Message →";' +
+  '    }' +
+  '  } catch(ex) {' +
+  '    err.style.display = "block";' +
+  '    btn.disabled = false;' +
+  '    btn.innerText = "Send Message →";' +
+  '  }' +
+  '});' +
+  '</script>' +
   '<div style="margin-top:32px;line-height:1.7">' +
   '<h3 class="title-md">Direct Contact Info</h3>' +
-  '<p>Email: <strong>support@calcoly.com</strong><br>Website: <a href="https://calcoly.com/" class="in-text-link">https://calcoly.com</a></p>' +
+  '<p>Email: <a href="mailto:suvo.tripathy@gmail.com" class="in-text-link"><strong>suvo.tripathy@gmail.com</strong></a><br>Website: <a href="https://calcoly.com/" class="in-text-link">https://calcoly.com</a></p>' +
   '</div></div>';
 
   return wrap(body, {
