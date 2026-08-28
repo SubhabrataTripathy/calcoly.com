@@ -19,6 +19,7 @@ const {
   metricToImperialPage,
   percentageFormulaPage,
   privacyPage,
+  termsPage,
   contactPage
 } = await import('./src/templates.mjs');
 
@@ -55,8 +56,9 @@ pillars.forEach(p => {
 /* --- all-tools --- */
 write('all-tools/index.html', allToolsPage());
 
-/* --- privacy & contact pages --- */
+/* --- privacy, terms & contact pages --- */
 write('privacy/index.html', privacyPage());
+write('terms/index.html', termsPage());
 write('contact/index.html', contactPage());
 
 /* --- linkable asset cheat sheets --- */
@@ -78,6 +80,7 @@ const urls = [
   SITE.url + '/',
   SITE.url + '/all-tools/',
   SITE.url + '/privacy/',
+  SITE.url + '/terms/',
   SITE.url + '/contact/',
   SITE.url + '/baking-conversion-chart/',
   SITE.url + '/metric-to-imperial-cheat-sheet/',
@@ -113,4 +116,4 @@ const htmlFiles = (function walk(dir, out = []) {
 htmlFiles.forEach(relifyHtml);
 console.log('\nAsset paths relativized in ' + htmlFiles.length + ' pages (file:// safe)');
 
-console.log('\nDone — Built ' + (tools.length + pillars.length + 7) + ' pages + sitemap.xml in dist/');
+console.log('\nDone — Built ' + (tools.length + pillars.length + 8) + ' pages + sitemap.xml in dist/');

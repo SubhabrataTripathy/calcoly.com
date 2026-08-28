@@ -56,7 +56,7 @@ function footerHTML() {
     '</div></div>' +
     '<div class="footer-cols">' + colHTML + '</div>' +
     '<div class="footer-base"><span>&copy; ' + new Date().getFullYear() + ' Calcoly &middot; Calculate. Convert. Done.</span>' +
-    '<span><a href="/all-tools/">All Tools</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a></span></div>' +
+    '<span><a href="/all-tools/">All Tools</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a> &middot; <a href="/contact/">Contact</a></span></div>' +
     '</div></footer>';
 }
 
@@ -1227,6 +1227,53 @@ export function privacyPage() {
     title: 'Privacy Policy — Calcoly',
     desc: 'Calcoly Privacy Policy. 100% client-side calculations, zero account registration, zero tracking cookies.',
     canonical: SITE.url + '/privacy/'
+  });
+}
+
+/* ========== TERMS OF SERVICE PAGE ========== */
+export function termsPage() {
+  var path = '/terms/';
+  var body = navHTML(path) +
+  '<div class="container crumbs"><a href="/">Home</a><span>&rsaquo;</span><span>Terms of Service</span></div>' +
+  '<div class="container tool-head"><div class="badge-pill">Legal &amp; Transparency</div>' +
+  '<h1 class="display-md" style="margin-top:8px">Terms of Service</h1>' +
+  '<p class="body-md lead">Please review the terms and conditions governing the use of Calcoly.com and its online calculation tools.</p></div>' +
+  '<div class="container" style="max-width:760px;margin-top:24px;line-height:1.7">' +
+  '<p class="body-sm" style="color:var(--muted);margin-bottom:20px">Last updated: August 2026</p>' +
+  '<h2 class="title-lg" style="margin:24px 0 12px">1. Acceptance of Terms</h2>' +
+  '<p>By accessing and using Calcoly (accessible at <a href="https://calcoly.com/" class="in-text-link">https://calcoly.com</a>), you acknowledge that you have read, understood, and agreed to be bound by these Terms of Service. If you do not agree with any portion of these terms, please discontinue use of the website immediately.</p>' +
+  '<h2 class="title-lg" style="margin:24px 0 12px">2. Educational &amp; Informational Purpose Only</h2>' +
+  '<p>All interactive calculators, unit conversion formulas, baking ratio scalers, and estimation tools provided on Calcoly are designed solely for general educational, household, and informational purposes. Specifically:</p>' +
+  '<ul style="margin:12px 0 16px 24px;list-style:disc">' +
+  '<li><strong>Health &amp; Fitness:</strong> Calculators such as BMI, TDEE, and macronutrient targets do not constitute medical advice or diagnostic evaluation. Consult a physician or registered dietitian before undertaking dietary or exercise regimens.</li>' +
+  '<li><strong>Financial &amp; Tax:</strong> Tools including VAT, discounts, and step-up compound interest calculators provide mathematical projections and estimates. They do not constitute certified financial, tax, or investment advice.</li>' +
+  '<li><strong>DIY &amp; Construction:</strong> Tools for paint coverage, concrete volume, or wire gauges are estimates based on standard theoretical factors. Always verify specifications on material manufacturer labels before purchasing or building.</li>' +
+  '</ul>' +
+  '<h2 class="title-lg" style="margin:24px 0 12px">3. Client-Side Processing &amp; Privacy</h2>' +
+  '<p>Calcoly operates on a strict client-side compute architecture. All mathematical operations are calculated locally in your web browser. We do not store, log, or transmit your individual input values to remote servers. Please review our <a href="/privacy/" class="in-text-link">Privacy Policy</a> for full details on our data protection practices.</p>' +
+  '<h2 class="title-lg" style="margin:24px 0 12px">4. Intellectual Property &amp; Acceptable Use</h2>' +
+  '<p>The user interface design, branding, typography, cheat sheet reference assets, and curated algorithms of Calcoly are the intellectual property of Calcoly. You are granted a non-exclusive license to use these tools for personal, educational, and commercial reference purposes. You agree not to:</p>' +
+  '<ul style="margin:12px 0 16px 24px;list-style:disc">' +
+  '<li>Attempt to disrupt, overload, or perform denial-of-service (DDoS) attacks against our infrastructure;</li>' +
+  '<li>Scrape or mirror the website in a manner that degrades service availability for others;</li>' +
+  '<li>Circumvent or tamper with client-side security headers or service worker configurations.</li>' +
+  '</ul>' +
+  '<h2 class="title-lg" style="margin:24px 0 12px">5. Disclaimer of Warranties</h2>' +
+  '<p>Calcoly provides all tools, formulas, cheat sheets, and content on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis without warranties of any kind, whether express, implied, statutory, or otherwise, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or accuracy. While we make every reasonable effort to maintain verified mathematical constants and standard equations, we do not warrant that the tools will be completely error-free or uninterrupted.</p>' +
+  '<h2 class="title-lg" style="margin:24px 0 12px">6. Limitation of Liability</h2>' +
+  '<p>In no event shall Calcoly, its developers, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, materials, or business interruption, arising out of or in connection with your use or inability to use the tools or reference sheets provided on this site.</p>' +
+  '<h2 class="title-lg" style="margin:24px 0 12px">7. External Links</h2>' +
+  '<p>Calcoly may contain links to third-party reference documentation, government measurement standards (e.g. NIST, ISO), or external educational resources. We do not control or endorse the content or privacy policies of third-party websites.</p>' +
+  '<h2 class="title-lg" style="margin:24px 0 12px">8. Modifications to Terms</h2>' +
+  '<p>We reserve the right to modify or replace these Terms of Service at any time. Any changes will be posted directly to this page with an updated revision date.</p>' +
+  '<h2 class="title-lg" style="margin:24px 0 12px">9. Contact Us</h2>' +
+  '<p>If you have any questions, suggestions, or concerns regarding these Terms of Service, please contact our team directly at <a href="mailto:support@calcoly.com" class="in-text-link"><strong>support@calcoly.com</strong></a> or through our <a href="/contact/" class="in-text-link">Contact Page</a>.</p>' +
+  '</div>';
+
+  return wrap(body, {
+    title: 'Terms of Service — Calcoly',
+    desc: 'Terms of Service and conditions of use for Calcoly.com online calculators, converters, and reference tools.',
+    canonical: SITE.url + '/terms/'
   });
 }
 
