@@ -108,8 +108,8 @@ export function wrap(body, meta) {
     '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' +
     '<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">' +
     '<title>' + esc(title) + '</title><meta name="description" content="' + esc(desc) + '">' + can + ogTags + schema +
-    '<link rel="stylesheet" href="/assets/styles.css?v=3">' + toolsStateScript() + '</head><body>' + body +
-    '<script src="/assets/app.js?v=3"></script><script src="/assets/widgets.js?v=3"></script>' + searchModalHTML + footerHTML() + '</body></html>';
+    '<link rel="stylesheet" href="/assets/styles.css?v=4">' + toolsStateScript() + '</head><body>' + body +
+    '<script src="/assets/app.js?v=4"></script><script src="/assets/widgets.js?v=4"></script>' + searchModalHTML + footerHTML() + '</body></html>';
 }
 
 /* ========== HOMEPAGE ========== */
